@@ -6,10 +6,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-h1{font-size: 60px;
-    margin: 30px 0;
-    color: #fff;
-}
+
+
 body {
     font-family: 'Playfair Display', serif;
     background-color:rgb(51, 23, 23) ;
@@ -31,6 +29,8 @@ img {
 h2 {
     font-size: 40px;
     margin: 30px 0;
+    color: #f7f1f1;
+
 }
 
 
@@ -43,7 +43,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #680606;
     padding: 12px 15px;
 }
 
@@ -51,6 +51,7 @@ th, td {
 th {
     background-color: #640101ce; 
     text-align: center;
+    color: #fff;
 }
 
 td:first-child {
@@ -60,9 +61,6 @@ td:last-child {
     text-align: right; 
 }
 
-tr:nth-child(even){
-    background-color: #f9f9f9;
-}
 
 button{
     display: block;

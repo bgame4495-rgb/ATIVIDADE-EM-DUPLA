@@ -9,6 +9,12 @@ img{
     display: block;
     max-width: 300px;
     margin: 15px auto;
+   
+}
+img{
+    display: block;
+    max-width: 300px;
+    margin: 15px auto;
 }
 
 body {
@@ -18,17 +24,54 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 p{
     text-align: justify;
     font-size: 20px;
     font-family: "Times New Roman";
     font-style: italic;
     color: white;
+    margin: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-weight: bold;
 }
-p2{
-    text-align: justify;
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-weight: bold;
+}
+
+button{
+    display: block;
+    margin: 40px auto;
+    cursor: pointer;
+    padding: 5px 30 px;
+    border-radius: 30px;
+    background-color: rgb(161, 5, 5);
     font-size: 20px;
     font-family: "Times New Roman";
     font-style: italic;
+    text-decoration: none;
+    color: white;
+}
+
+.prato {
+    display: flex;
+    flex-direction: row;
+}
+
+.macarrao {
+    max-width:100%;
+    height: 350px;
+    margin: 40px;
+}
+
+a {
+    text-decoration: none;
     color: white;
 }

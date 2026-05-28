@@ -1,77 +1,172 @@
-/* RESET DO NAVEGADOR */
-*  {
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E TIPOGRAFIA (Estilo Trattoria Italiana)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+    --vermelho-vinho: #5c111a;   /* Cor de vinho clássico */
+    --verde-oliva: #2d4a22;      /* Verde tradicional italiano */
+    --marfim-fundo: #fbf9f4;     /* Fundo suave que lembra papel de menu antigo */
+    --ouro: #cda45e;             /* Destaques e botões dourados */
+    --texto-escuro: #2a2521;     /* Escuro suave para leitura confortável */
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-img{
-    display: block;
-    max-width: 300px;
-    margin: 15px auto;
-   
-}
-img{
-    display: block;
-    max-width: 300px;
-    margin: 15px auto;
-}
-
 body {
-    background-color: rgb(51, 23, 23);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-p{
-    text-align: justify;
-    font-size: 20px;
-    font-family: "Times New Roman";
-    font-style: italic;
-    color: white;
-    margin: 30px;
-    padding-right: 50px;
-    padding-left: 50px;
-    font-weight: bold;
-}
-
-h1{
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    font-family: "Times New Roman";
-    font-style: italic;
-    font-weight: bold;
-}
-
-button{
-    display: block;
-    margin: 40px auto;
-    cursor: pointer;
-    padding: 5px 30 px;
-    border-radius: 30px;
-    background-color: rgb(161, 5, 5);
-    font-size: 20px;
-    font-family: "Times New Roman";
-    font-style: italic;
-    text-decoration: none;
-    color: white;
-}
-
-.prato {
+    background-color: var(--marfim-fundo);
+    color: var(--texto-escuro);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    padding: 40px 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* ==========================================================================
+   LOGOTIPO E TITULO
+   ========================================================================== */
+/* Imagem do Logo */
+.index {
+    display: block;
+    max-width: 180px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.1));
+}
+
+/* Nome do Restaurante */
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--vermelho-vinho);
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Linha decorativa abaixo do título */
+h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: var(--ouro);
+    margin: 15px auto 0 auto;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (O Prato / Texto e Imagem)
+   ========================================================================== */
+.prato {
+    max-width: 850px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(42, 37, 33, 0.05);
+    border: 1px solid rgba(205, 164, 94, 0.2); /* Borda dourada sutil */
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.prato p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: var(--texto-escuro);
+}
+
+/* Imagem do Macarrão */
 .macarrao {
-    max-width:100%;
-    height: 350px;
-    margin: 40px;
+    display: block;
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover; /* Corta a imagem perfeitamente sem distorcer */
+    border-radius: 4px;
+    margin-top: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffffff;
+    outline: 1px solid var(--ouro);
 }
 
-a {
+/* ==========================================================================
+   BOTÕES DE NAVEGAÇÃO
+   ========================================================================== */
+button {
+    background-color: transparent;
+    border: 2px solid var(--vermelho-vinho);
+    padding: 0; /* Remove padding interno para o link ocupar todo o espaço */
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+button a {
+    display: block;
+    padding: 12px 24px;
+    color: var(--vermelho-vinho);
     text-decoration: none;
-    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de Hover nos Botões (Inverte as cores) */
+button:hover {
+    background-color: var(--vermelho-vinho);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(92, 17, 26, 0.2);
+}
+
+button:hover a {
+    color: var(--marfim-fundo);
+}
+
+/* Se quiser diferenciar um dos botões com a cor dourada/ouro */
+button:last-of-type {
+    border-color: var(--ouro);
+}
+button:last-of-type a {
+    color: var(--ouro);
+}
+button:last-of-type:hover {
+    background-color: var(--ouro);
+}
+button:last-of-type:hover a {
+    color: #fff;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Para Celular)
+   ========================================================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .prato {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
 }

@@ -1,82 +1,202 @@
-/* Terceira Pagina */
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E TIPOGRAFIA (Identidade Le Mavinni)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --vermelho-vinho: #5c111a;
+    --marfim-fundo: #fbf9f4;
+    --ouro: #cda45e;
+    --texto-escuro: #2a2521;
+    --verde-oliva: #2d4a22;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
 body {
-    background-color: rgb(49, 15, 15) ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    
+    background-color: var(--marfim-fundo);
+    color: var(--texto-escuro);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-h1{
+/* ==========================================================================
+   LOGOTIPO E TÍTULOS
+   ========================================================================== */
+/* Imagem do Logo */
+img:not(.pasta) {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 20px auto;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--vermelho-vinho);
     text-align: center;
-    font-size: 60px;
-    font-family: italic ;
-    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 h3 {
-    margin: 50px;
-    padding-left: 880px;
-    font-size: 20px;
-    font-family: italic;
-    color: aliceblue;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 20px
-}
-
-
-
-
-button{
-    display: block;
-    margin: 40px auto;
-    cursor: pointer;
-    padding: 5px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    background-color: rgb(161, 5, 5);
-    font-size: 20px;
-    font-family: "Times New Roman";
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
     font-style: italic;
-    color: white
-
+    color: var(--ouro);
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
+/* ==========================================================================
+   BLOCO DE CONVITE (Grid Lado a Lado)
+   ========================================================================== */
 .convite {
     display: flex;
-    flex-direction: row;
-}
-p {
-    text-align: justify;
-    padding-right: 20px ;
-    padding-left: 0px;
-    color: rgb(255, 255, 255);
-    margin: 20PX;
-    font-family: italic;
-    font-weight: bold;
-    font-size: 30px;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(42, 37, 33, 0.04);
+    border: 1px solid rgba(205, 164, 94, 0.15);
+    margin-bottom: 40px;
 }
 
+/* Imagem da Massa */
 .pasta {
-    max-width: 100%;
-    height: 500px;
-    padding-right: 30px;
-    padding-left: 200px;
+    width: 45%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Texto do Convite */
+.convite p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--texto-escuro);
+    text-align: left;
+}
+
+/* ==========================================================================
+   BOTÃO DE RESERVA DESTAQUE (Call to Action)
+   ========================================================================== */
+.btn-reservar {
+    background-color: var(--vermelho-vinho);
+    color: #ffffff;
+    border: 2px solid var(--vermelho-vinho);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 40px;
+    margin-bottom: 50px;
+    min-width: 280px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(92, 17, 26, 0.2);
+}
+
+.btn-reservar:hover {
+    background-color: transparent;
+    color: var(--vermelho-vinho);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(92, 17, 26, 0.15);
+}
+
+/* ==========================================================================
+   BOTÕES DE NAVEGAÇÃO SECUNDÁRIOS
+   ========================================================================== */
+button:not(.btn-reservar) {
+    background-color: transparent;
+    border: 1px solid rgba(42, 37, 33, 0.3);
+    padding: 0;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    min-width: 180px;
+}
+
+button:not(.btn-reservar) a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:not(.btn-reservar):hover {
+    border-color: var(--ouro);
+    background-color: rgba(205, 164, 94, 0.05);
+}
+
+button:not(.btn-reservar):hover a {
+    color: var(--ouro);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Para Celular)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+
+    .convite {
+        flex-direction: column; /* No celular, a imagem fica em cima do texto */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .pasta {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .convite p {
+        font-size: 1.15rem;
+        text-align: center;
+    }
+
+    .btn-reservar {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    button:not(.btn-reservar) {
+        width: 100%;
+        margin: 6px 0;
+    }
 }

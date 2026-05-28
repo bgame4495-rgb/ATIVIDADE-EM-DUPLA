@@ -1,5 +1,14 @@
-/* RESET DO NAVEGADOR */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E TIPOGRAFIA (Mantendo a identidade do Le Mavinni)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+    --vermelho-vinho: #5c111a;
+    --marfim-fundo: #fbf9f4;
+    --ouro: #cda45e;
+    --texto-escuro: #2a2521;
+}
 
 * {
     margin: 0;
@@ -7,76 +16,189 @@
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Playfair Display', serif;
-    background-color:rgb(51, 23, 23) ;
-    color: #0e0909;
-    text-align: center; 
-    background-image: url(assets/logodorestaurante.png);
-    background-position: calc(45);
-    background-repeat: no-repeat;
-
+    background-color: var(--marfim-fundo);
+    color: var(--texto-escuro);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-img {
-    display: block;
-    margin: 20px auto;
-    cursor: pointer;
-    padding:5px 30px;
-    border-radius: 30px;
-}
+/* ==========================================================================
+   TÍTULO DA PÁGINA (Menu / Cardápio)
+   ========================================================================== */
 h2 {
-    font-size: 40px;
-    margin: 30px 0;
-    color: #f7f1f1;
-
-}
-
-
-table {
-    margin: 0 auto; 
-    border-collapse: collapse;
-    width: 60%; 
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-}
-
-th, td {
-    border: 1px solid #680606;
-    padding: 12px 15px;
-}
-
-
-th {
-    background-color: #640101ce; 
+    font-family: 'Playfair Display', serif; /* Usando a fonte que você importou no HTML */
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--vermelho-vinho);
     text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Detalhe sutil abaixo do título */
+h2::after {
+    content: '❖';
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ouro);
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO MENU (Tabela)
+   ========================================================================== */
+table {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(42, 37, 33, 0.04);
+    border: 1px solid rgba(205, 164, 94, 0.15);
+}
+
+/* Cabeçalho da Tabela */
+th {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--vermelho-vinho);
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 2px solid var(--ouro);
+    letter-spacing: 1px;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+/* Linhas e Células do Menu */
+td {
+    padding: 18px 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--texto-escuro);
+    border-bottom: 1px dashed rgba(205, 164, 94, 0.3); /* Linha pontilhada estilo menu */
+    transition: background-color 0.2s ease;
+}
+
+/* Nome do prato */
+td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Preço do prato */
+td:last-child {
+    text-align: right;
+    color: var(--vermelho-vinho);
+    font-weight: 700;
+}
+
+/* Efeito visual ao passar o mouse por cima do prato */
+tr:hover td {
+    background-color: rgba(253, 251, 247, 0.8);
+    color: var(--vermelho-vinho);
+}
+
+/* Remove a linha tracejada do último item */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   BOTÕES DE NAVEGAÇÃO (Mantendo o padrão da primeira página)
+   ========================================================================== */
+button {
+    background-color: transparent;
+    border: 2px solid var(--vermelho-vinho);
+    padding: 0;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    min-width: 180px;
+}
+
+button a {
+    display: block;
+    padding: 12px 24px;
+    color: var(--vermelho-vinho);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hover nos botões */
+button:hover {
+    background-color: var(--vermelho-vinho);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(92, 17, 26, 0.15);
+}
+
+button:hover a {
+    color: var(--marfim-fundo);
+}
+
+/* Estilo dourado para o botão de reserva (Prenotazione) */
+button:last-of-type {
+    border-color: var(--ouro);
+}
+
+button:last-of-type a {
+    color: var(--ouro);
+}
+
+button:last-of-type:hover {
+    background-color: var(--ouro);
+}
+
+button:last-of-type:hover a {
     color: #fff;
 }
 
-td:first-child {
-    text-align: left; 
-}
-td:last-child {
-    text-align: right; 
-}
+/* ==========================================================================
+   RESPONSIVIDADE (Para Telas Pequenas)
+   ========================================================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 40px 15px;
+    }
 
+    h2 {
+        font-size: 2.2rem;
+    }
 
-button{
-    display: block;
-    margin: 20px auto;
-    cursor: pointer;
-    padding: 5px 30px;
-    border-radius: 30px;
-    background-color:rgb(161, 5, 5);
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: "Times New Roman";
-    font-style: italic;
-}
+    th {
+        font-size: 1.1rem;
+        padding: 15px 10px;
+    }
 
-a {
-    text-decoration: none;
-    color: white;
+    td {
+        font-size: 1.1rem;
+        padding: 15px 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
 }
